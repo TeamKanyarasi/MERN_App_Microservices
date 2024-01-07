@@ -1,0 +1,7 @@
+FROM node:18
+WORKDIR /
+COPY . /
+ENV HELLO_SRVC_URL $HELLO_SRVC_URL
+ENV PROFILE_SRVC_URL $PROFILE_SRVC_URL
+RUN npm install
+CMD [ "npm", "run", "start" ]

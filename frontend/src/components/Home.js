@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
+const HELLO_SRVC_URL= process.env.HELLO_SRVC_URL;
+const PROFILE_SRVC_URL= process.env.PROFILE_SRVC_URL;
+
 function Home() {
   const [message, setMessage] = useState("");
   const [profile, setProfile] = useState([]);
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/")
+      .get(HELLO_SRVC_URL)
       .then((response) => {
         setMessage(response.data.msg);
       })
@@ -16,7 +19,7 @@ function Home() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3002/fetchUser")
+      .get(PROFILE_SRVC_URL)
       .then((response) => {
         setProfile(response.data);
         
