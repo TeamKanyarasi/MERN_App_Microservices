@@ -43,7 +43,7 @@ docker run -it -e REACT_APP_HS_URL=http://<EC2-public-IP>:3001 -e REACT_APP_PS_U
 
 ![Screenshot (121)](https://github.com/TeamKanyarasi/MERN_App_Microservices/assets/139607786/be302baf-f1aa-4748-b630-6190682cf96c)
 
-- Create
+- Create a public repository and push the image to the ECR.
 
 ![Screenshot (127)](https://github.com/TeamKanyarasi/MERN_App_Microservices/assets/139607786/37492c00-3de6-43f2-adc3-fda037eff8f7)
 
