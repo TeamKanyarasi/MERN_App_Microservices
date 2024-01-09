@@ -38,7 +38,7 @@ docker build -t <your-image-name:tag> .
 - Host the application on a container by passing the env variable.
 
 ```
-docker run -it -e REACT_APP_HS_URL=http://<EC2-public-IP>:3001 -e REACT_APP_PS_URL=http://<EC2-public-IP>:3002/fetchUser -p 3000:3000 <your-docker-image-name:tag>
+docker run -it -e REACT_APP_HS_URL=http://<your-EC2-public-IP>:3001 -e REACT_APP_PS_URL=http://<your-EC2-public-IP>:3002/fetchUser -p 3000:3000 <your-docker-image-name:tag>
 ```
 
 ![Screenshot (121)](https://github.com/TeamKanyarasi/MERN_App_Microservices/assets/139607786/be302baf-f1aa-4748-b630-6190682cf96c)
