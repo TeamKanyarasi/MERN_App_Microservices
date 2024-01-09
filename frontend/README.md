@@ -49,4 +49,7 @@ docker run -it -e REACT_APP_HS_URL=http://<EC2-public-IP>:3001 -e REACT_APP_PS_U
 
 ![Screenshot (128)](https://github.com/TeamKanyarasi/MERN_App_Microservices/assets/139607786/66d55450-8ac0-4c30-baad-65870bb9daa1)
 
+- Containerized frontend and backend services.
+
+![Screenshot (122)](https://github.com/TeamKanyarasi/MERN_App_Microservices/assets/139607786/6a1d5a09-156c-429c-bc39-53ae5577963b)
 
