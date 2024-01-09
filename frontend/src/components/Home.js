@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const HELLO_SRVC_URL= process.env.HELLO_SRVC_URL;
-const PROFILE_SRVC_URL= process.env.PROFILE_SRVC_URL;
+const REACT_APP_HS_URL= process.env.REACT_APP_HS_URL;
+const REACT_APP_PS_URL= process.env.REACT_APP_PS_URL;
 
 function Home() {
   const [message, setMessage] = useState("");
@@ -10,7 +10,7 @@ function Home() {
 
   useEffect(() => {
     axios
-      .get(HELLO_SRVC_URL)
+      .get(REACT_APP_HS_URL)
       .then((response) => {
         setMessage(response.data.msg);
       })
@@ -19,7 +19,7 @@ function Home() {
 
   useEffect(() => {
     axios
-      .get(PROFILE_SRVC_URL)
+      .get(REACT_APP_PS_URL)
       .then((response) => {
         setProfile(response.data);
         
