@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: frontend-container
+          image: public.ecr.aws/c3w1m1q2/charan-feservice:latest
+          ports:
+            - containerPort: 3000  
+          env:
+            - name: REACT_APP_HS_URL
+              value: "http://your-hello-loadbalancer-service-dns"
+            - name: REACT_APP_PS_URL
+              value: "http://your- profile-loadbalancer-service-dns"

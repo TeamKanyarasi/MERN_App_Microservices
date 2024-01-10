@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: profile-service
+  name: profile-service-srvc
+spec:
+  ports:
+  - port: 3002
+    protocol: TCP
+    targetPort: 3002
+  selector:
+    app: profile-service
+  type: LoadBalancer
+status:
+  loadBalancer: {}
