@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     app: profile-service
-  name: profile-service-srvc
+  name: profile-service
 spec:
   ports:
   - port: 3002
