@@ -1,25 +1,38 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: profile-service-deployment
+  name: backend-ps-mern-cy
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
-      app: profile-service
+      app: backend-ps-mern-cy
   template:
     metadata:
       labels:
-        app: profile-service
+        app: backend-ps-mern-cy
     spec:
       containers:
-        - name: profile-service-container
-          image: public.ecr.aws/c3w1m1q2/charan-profileservice:latest
-          ports:
-            - containerPort: 3002
-          env:
-            - name: MONGO_URL
-              valueFrom:
-                secretKeyRef:
-                  name: mongo-secret
-                  key: MONGO_URL
+      - name: profile-microservice
+        image: public.ecr.aws/c3w1m1q2/charan-profileservice:latest
+        ports:
+          - containerPort: 3002
+        env:
+        - name: MONGO_URL
+          valueFrom:
+            secretKeyRef:
+              name: my-secret
+              key: mongo-url
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: profileservice-be-service
+spec:
+  selector:
+    app: backend-ps-mern-cy
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3002
+  type: LoadBalancer

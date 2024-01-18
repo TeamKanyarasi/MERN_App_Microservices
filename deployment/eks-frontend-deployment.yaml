@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend-deployment
+  name: frontend-mern-cy
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: frontend
+      app: frontend-mern-cy
   template:
     metadata:
       labels:
-        app: frontend
+        app: frontend-mern-cy
     spec:
       containers:
-        - name: frontend-container
+        - name: frontend-microservice
           image: public.ecr.aws/c3w1m1q2/charan-feservice:latest
           ports:
             - containerPort: 3000  
@@ -22,3 +22,16 @@ spec:
               value: "http://your-hello-loadbalancer-service-dns"
             - name: REACT_APP_PS_URL
               value: "http://your- profile-loadbalancer-service-dns"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+spec:
+  selector:
+    app: frontend-mern-cy
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+  type: LoadBalancer
