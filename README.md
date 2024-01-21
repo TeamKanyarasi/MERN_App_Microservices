@@ -113,7 +113,10 @@ pip install git-remote-codecommit
      ```
      aws eks --region <region-name> update-kubeconfig --name <your-cluster-name>
      ```
-
+    Pass the env variables into the deployment.yaml file using the below command
+   ```
+   kubectl create secret generic mongo-secret --from-literal=MONGO_URL=" your mongo db url"
+   ```
     Apply all the deployment.yaml files from the following link using the below command
    
     https://github.com/TeamKanyarasi/MERN_App_Microservices/tree/main/deployment
