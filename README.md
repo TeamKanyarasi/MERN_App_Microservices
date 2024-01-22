@@ -124,7 +124,11 @@ pip install git-remote-codecommit
     ```
     kubectl apply -f <deployment-file-name.yml>
     ```
-
+    Additional commad
+    ```
+    eksctl create nodegroup --cluster <cluster-name> --region <region> --name <nodegroup-name> --node-type <node-type> --nodes <number-of-nodes>
+    ```
+    
 ![Screenshot (129)](https://github.com/TeamKanyarasi/MERN_App_Microservices/assets/139607786/efe26be3-b6d5-4d29-b26d-000a5000a981)
 
 ![Screenshot (130)](https://github.com/TeamKanyarasi/MERN_App_Microservices/assets/139607786/9c5c0e83-c5cd-472e-9765-f496a636049b)
